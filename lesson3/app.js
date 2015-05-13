@@ -15,9 +15,11 @@ app.get('/', function(request, response) {
             var items = [];
             $('#topic_list .topic_title').each(function(index, element) {
                 var $element = $(element);
+                var author = $element.closest('.cell').find('.user_avatar img').eq(0).attr('title');
                 items.push({
                     title: $element.attr('title'),
-                    href: $element.attr('href')
+                    href: $element.attr('href'),
+                    author: author
                 });
             });
             response.send(items);
