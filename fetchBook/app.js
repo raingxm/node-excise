@@ -18,7 +18,12 @@ app.get('/', function(request, response) {
         $('.product_ul li').each(function(index, element) {
             var $element = $(element);
             var name = $element.find('.name a').text();
-            items.push({name: name});
+            var author = $element.find('.author').text();
+            var price = parseInt($element.find('.price .rob .num').text());
+            items.push({name: name,
+                        author: author,
+                        price: price
+                });
         });
 
         response.send(items);
