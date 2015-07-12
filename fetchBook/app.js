@@ -59,8 +59,7 @@ app.get('/', function(request, response) {
                     name: items[index].name,
                     author: items[index].author,
                     price: items[index].price,
-                    describe: ele.describe,
-                    url: ele.url
+                    describe: ele.describe
                 });
             });
             response.send(booksInfo);
